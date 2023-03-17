@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UpNavbar from './component/UpNavbar';
+import Main from './component/Main';
+import About from './component/About';
+import Skills from './component/Skills';
+import Project from './component/Project';
+import Activity from './component/Activity';
+import Achievement from './component/Achievement';
+import Reviews from './component/Reviews';
+import "./component/Style.css"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='MainBackGround'>
+      <BrowserRouter>
+      <UpNavbar />
+      <Main />
+      <Routes>
+          
+          
+          <Route path="/" element={<About />}> about</Route>
+          <Route path="Skills" element={<Skills />}></Route>
+          <Route path="Project" element={<Project />}></Route>
+          <Route path="Activity" element={<Activity />}></Route>
+          <Route path="Achievement" element={<Achievement />}></Route>
+          <Route path="Reviews" element={<Reviews />}></Route>
+        </Routes>
+
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
+
+
+
